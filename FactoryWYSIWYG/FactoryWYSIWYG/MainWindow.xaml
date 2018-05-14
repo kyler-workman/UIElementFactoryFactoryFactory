@@ -1,0 +1,35 @@
+﻿<Window x:Class="FactoryWYSIWYG.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FactoryWYSIWYG"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <StackPanel Orientation="Horizontal">
+        <StackPanel>
+            <ComboBox Height="40" Width="100" Margin="10" x:Name="Selector" SelectionChanged="Selector_SelectionChanged">
+                <ComboBoxItem>
+                    <Label>HTML</Label>
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    <Label>WPF</Label>
+                </ComboBoxItem>
+            </ComboBox>
+        </StackPanel>
+        <StackPanel x:Name="ButtonContainer" Width="220"></StackPanel>
+        <StackPanel Width="195" Margin="0 10" Visibility="Hidden" x:Name="vars">
+            <local:Entry x:Name="content" Margin="10 0"></local:Entry>
+            <local:Entry x:Name="height" Margin="10 0"></local:Entry>
+            <local:Entry x:Name="width" Margin="10 0"></local:Entry>
+            <local:Entry x:Name="top" Margin="10 0"></local:Entry>
+            <local:Entry x:Name="left" Margin="10 0"></local:Entry>
+        </StackPanel>
+        <StackPanel>
+            <ScrollViewer Height="350">
+                <Label Width="240"></Label>
+            </ScrollViewer>
+            <Button Height="30" Width="100" Margin="20">Compile</Button>
+        </StackPanel>
+    </StackPanel>
+</Window>
