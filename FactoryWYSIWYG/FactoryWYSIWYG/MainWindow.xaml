@@ -19,15 +19,17 @@
         </StackPanel>
         <StackPanel x:Name="ButtonContainer" Width="220"></StackPanel>
         <StackPanel Width="195" Margin="0 10" Visibility="Hidden" x:Name="vars">
-            <local:Entry x:Name="content" Margin="10 0"></local:Entry>
-            <local:Entry x:Name="height" Margin="10 0"></local:Entry>
-            <local:Entry x:Name="width" Margin="10 0"></local:Entry>
-            <local:Entry x:Name="top" Margin="10 0"></local:Entry>
-            <local:Entry x:Name="left" Margin="10 0"></local:Entry>
+            <local:Entry x:Name="content" Margin="10"></local:Entry>
+            <local:Entry x:Name="height" Margin="10"></local:Entry>
+            <local:Entry x:Name="width" Margin="10"></local:Entry>
+            <local:Entry x:Name="top" Margin="10"></local:Entry>
+            <local:Entry x:Name="left" Margin="10"></local:Entry>
         </StackPanel>
         <StackPanel>
-            <ScrollViewer Height="350">
-                <Label Width="240"></Label>
+            <ScrollViewer Height="350" >
+                <StackPanel Width="233" x:Name="AddedElements">
+
+                </StackPanel>
             </ScrollViewer>
             <Button Height="30" Width="100" Margin="20">Compile</Button>
         </StackPanel>

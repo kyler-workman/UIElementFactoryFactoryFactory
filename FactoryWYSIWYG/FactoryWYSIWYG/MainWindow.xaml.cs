@@ -43,6 +43,7 @@ namespace FactoryWYSIWYG
                 ButtonContainer.Children.Add(new CSElements());
             }
             vars.Visibility = Visibility.Visible;
+            AddedElements.Children.Add(new Label() { Content="Added Elements"});
         }
     }
 }
