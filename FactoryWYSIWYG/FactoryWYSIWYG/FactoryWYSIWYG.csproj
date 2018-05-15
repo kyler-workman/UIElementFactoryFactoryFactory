@@ -80,15 +80,16 @@
     <Compile Include="CS\CSUIElement.cs" />
     <Compile Include="CS\CSUIElementFactory.cs" />
     <Compile Include="CS\CSUIElementFactoryFactory.cs" />
+    <Compile Include="ElementsList.cs" />
     <Compile Include="Entry.xaml.cs">
       <DependentUpon>Entry.xaml</DependentUpon>
     </Compile>
     <Compile Include="HTMLElements.xaml.cs">
       <DependentUpon>HTMLElements.xaml</DependentUpon>
     </Compile>
-    <Compile Include="HTML\HTMLUiElement.cs" />
-    <Compile Include="HTML\HTMLUiElementFactory.cs" />
-    <Compile Include="HTML\HTMLUiElementFactoryFactory.cs" />
+    <Compile Include="HTML\HTMLUIElement.cs" />
+    <Compile Include="HTML\HTMLUIElementFactory.cs" />
+    <Compile Include="HTML\HTMLUIElementFactoryFactory.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

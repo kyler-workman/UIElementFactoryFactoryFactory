@@ -1,4 +1,7 @@
-﻿using System;
+﻿using FactoryWYSIWYG.CS;
+using FactoryWYSIWYG.HTML;
+using FactoryWYSIWYG.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +23,8 @@ namespace FactoryWYSIWYG
     /// </summary>
     public partial class MainWindow : Window
     {
+        public UIElementFactoryFactory ElementGenerator { get; set; }
+        List<Models.UIElement> Elements = new List<Models.UIElement>();
         public MainWindow()
         {
             InitializeComponent();
@@ -36,14 +41,57 @@ namespace FactoryWYSIWYG
             Selector.IsEnabled = false;
             if (Selector.SelectedIndex == 0)
             {
-                ButtonContainer.Children.Add(new HTMLElements());
+                ButtonContainer.Children.Add(new HTMLElements() { Name = "ElementSelector" });
+                ElementGenerator = new HTMLUIElementFactoryFactory();
             }
             else
             {
-                ButtonContainer.Children.Add(new CSElements());
+                ButtonContainer.Children.Add(new CSElements() { Name = "ElementSelector"});
+                ElementGenerator = new CSUIElementFactoryFactory();
             }
             vars.Visibility = Visibility.Visible;
+            Add.Visibility = Visibility.Visible;
+            Comp.Visibility = Visibility.Visible;
             AddedElements.Children.Add(new Label() { Content="Added Elements"});
+        }
+
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+            bool badinput = false;
+            if(!int.TryParse(left.Input.Text, out int x))
+            {
+                left.Input.Text = "Enter Number";
+                badinput = true;
+            }
+            if(!int.TryParse(top.Input.Text,out int y))
+            {
+                top.Input.Text = "Enter Number";
+                badinput = true;
+            }
+            if(!int.TryParse(width.Input.Text,out int w))
+            {
+                width.Input.Text = "Enter Number";
+                badinput = true;
+            }
+            if(!int.TryParse(height.Input.Text,out int h))
+            {
+                height.Input.Text = "Enter Number";
+                badinput = true;
+            }
+            try
+            {
+                ((ElementsList)ButtonContainer.Children[0]).ElementSelected.ToString();
+            }
+            catch (Exception)
+            {
+                badinput = true;
+            }
+
+            if (badinput) return;
+
+            Models.UIElement NewElement = ElementGenerator.GenerateUiElement(((ElementsList)ButtonContainer.Children[0]).ElementSelected.ToString(), content.Input.Text,h,w,y,x);
+            Elements.Add(NewElement);
+            AddedElements.Children.Add(new Label() {Content = NewElement.ToString()});
         }
     }
 }

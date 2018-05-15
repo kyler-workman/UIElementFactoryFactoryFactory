@@ -15,6 +15,11 @@ namespace FactoryWYSIWYG.Models
         public int Height { get; set; }
         public int Width { get; set; }
         public int TopDistance { get; set; }
-        public int LeftDistance { get; set; }   
+        public int LeftDistance { get; set; }
+
+        public override string ToString()
+        {
+            return $"{Tag} {Content} X:{LeftDistance} Y:{TopDistance} L:{Width} W:{Height}";
+        }
     }
 }

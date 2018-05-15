@@ -18,9 +18,9 @@ namespace FactoryWYSIWYG
     /// <summary>
     /// Interaction logic for CSElements.xaml
     /// </summary>
-    public partial class CSElements : UserControl
+    public partial class CSElements : UserControl, ElementsList
     {
-        public CSElement ElementSelected { get; set; }
+        public string ElementSelected { get; set; } = "";
         public CSElements()
         {
             InitializeComponent();
@@ -29,7 +29,7 @@ namespace FactoryWYSIWYG
         public void Button_Click(object sender, RoutedEventArgs e)
         {
             Button b = sender as Button;
-            ElementSelected = (CSElement)Enum.Parse(typeof(CSElement), b.Name);
+            ElementSelected = ((CSElement)Enum.Parse(typeof(CSElement), b.Name)).ToString();
             ItemSelected.Content = ElementSelected.ToString();
         }
     }

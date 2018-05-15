@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FactoryWYSIWYG.HTML
 {
-    public class HTMLUiElementFactoryFactory : UIElementFactoryFactory
+    public class HTMLUIElementFactoryFactory : UIElementFactoryFactory
     {
         public override UIElementFactory CreateUIElementFactory()
         {

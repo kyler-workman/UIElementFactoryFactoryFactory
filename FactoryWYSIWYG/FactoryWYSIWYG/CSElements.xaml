@@ -6,20 +6,20 @@
              xmlns:local="clr-namespace:FactoryWYSIWYG"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-  <StackPanel Height="500">
-    <StackPanel.Resources>
-      <Style TargetType="Button">
-        <Setter Property="Button.Height" Value="75"/>
-        <Setter Property="Button.Width" Value ="200"/>
-        <Setter Property="Button.Margin" Value="3 2 3 2"/>
-        <Setter Property="Button.Padding" Value="10"/>
-        <Setter Property="Button.FontSize" Value="25"/>
-        <Setter Property="Button.Background" Value="Cyan"/>
-        <Setter Property="Button.Foreground" Value="FireBrick"/>
-      </Style>
-    </StackPanel.Resources>
-    <Label x:Name ="ItemSelected" Content=" "/>
-    <Button Name = "Button" Content="Button" Click="Button_Click"/>
-    <Button Name = "TextBox" Content="TextBox" Click="Button_Click"/>
-  </StackPanel>
+    <StackPanel Height="500">
+        <StackPanel.Resources>
+            <Style TargetType="Button">
+                <Setter Property="Button.Height" Value="75"/>
+                <Setter Property="Button.Width" Value ="200"/>
+                <Setter Property="Button.Margin" Value="3 2 3 2"/>
+                <Setter Property="Button.Padding" Value="10"/>
+                <Setter Property="Button.FontSize" Value="25"/>
+                <Setter Property="Button.Background" Value="Cyan"/>
+                <Setter Property="Button.Foreground" Value="FireBrick"/>
+            </Style>
+        </StackPanel.Resources>
+        <Label x:Name ="ItemSelected" Content=" "/>
+        <Button Name = "Button" Content="Button" Click="Button_Click"/>
+        <Button Name = "TextBox" Content="TextBox" Click="Button_Click"/>
+    </StackPanel>
 </UserControl>

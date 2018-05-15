@@ -18,10 +18,9 @@ namespace FactoryWYSIWYG
     /// <summary>
     /// Interaction logic for HTMLElements.xaml
     /// </summary>
-    public partial class HTMLElements : UserControl
+    public partial class HTMLElements : UserControl, ElementsList
     {
-        
-        public HtmlElementEnum ElementSelected { get; set; }
+        public string ElementSelected { get; set; }
 
         public HTMLElements()
         {
@@ -31,7 +30,7 @@ namespace FactoryWYSIWYG
         public void Button_Click(object sender, RoutedEventArgs e)
         {
             Button b = sender as Button;
-            ElementSelected = (HtmlElementEnum)Enum.Parse(typeof(HtmlElementEnum),b.Name);
+            ElementSelected = ((HtmlElementEnum)Enum.Parse(typeof(HtmlElementEnum),b.Name)).ToString();
             ItemSelected.Content = ElementSelected.ToString();
         }
     }
@@ -40,7 +39,7 @@ namespace FactoryWYSIWYG
     {
         Button,
         TextBox,
-        Div,
-        P
+        div,
+        p
     }
 }
