@@ -9,6 +9,11 @@ namespace FactoryWYSIWYG.CS
 {
     class CSUIElementFactory : UIElementFactory
     {
+        public override void Compile(Stack<UIElement> tags)
+        {
+            throw new NotImplementedException();
+        }
+
         public override UIElement CreateUIElement(string tag, string content, int height, int width, int topDistance, int leftDistance)
         {
             return new CSUIElement(tag, content, height, width, topDistance, leftDistance);

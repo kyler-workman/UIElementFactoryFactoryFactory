@@ -10,5 +10,6 @@ namespace FactoryWYSIWYG.Models
     {
         abstract public UIElement CreateUIElement(string tag, string content, int height, int width, int topDistance, int leftDistance);
 
+        abstract public void Compile(Stack<UIElement> tags);
     }
 }

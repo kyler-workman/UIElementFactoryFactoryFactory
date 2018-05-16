@@ -39,7 +39,7 @@
             </ScrollViewer>
             <StackPanel Orientation="Horizontal">
                 <StackPanel>
-                    <Button Height="25" Width="100" Margin="10 7" Click="AddButton_Click" x:Name="Add" Visibility="Visible">Add Element</Button>
+                    <Button Height="25" Width="100" Margin="10 5" Click="AddButton_Click" x:Name="Add" Visibility="Visible">Add Element</Button>
                     <Button Height="25" Width="100" Margin="10 0" Click="RemoveButton_Click" x:Name="Remove" Visibility="Visible">Remove Element</Button>
                 </StackPanel>
                 <Button Height="30" Width="100" Margin="10 20" Click="CompileButton_Click" x:Name="Comp" Visibility="Visible">Compile</Button>

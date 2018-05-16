@@ -10,13 +10,18 @@ namespace FactoryWYSIWYG.Models
     {
         private UIElementFactory UIElementFactory;
         abstract public UIElementFactory CreateUIElementFactory();
-
         public UIElementFactoryFactory()
         {
             this.UIElementFactory = this.CreateUIElementFactory();
         }
         public UIElement GenerateUiElement(string tag, string content, int height, int width, int topDistance, int leftDistance) => UIElementFactory.CreateUIElement(tag, content, height, width, topDistance, leftDistance);
+        public void CompileCode(Stack<UIElement> tags)
+        {
+            UIElementFactory.Compile(tags);
         }
-            
-    
+    }
+
+
+
+
 }

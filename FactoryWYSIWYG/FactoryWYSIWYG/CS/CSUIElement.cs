@@ -18,5 +18,10 @@ namespace FactoryWYSIWYG.CS
             TopDistance = topDistance;
             LeftDistance = leftDistance;
         }
+
+        public override string ToTag()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

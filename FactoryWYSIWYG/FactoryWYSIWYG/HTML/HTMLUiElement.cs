@@ -18,5 +18,10 @@ namespace FactoryWYSIWYG.HTML
             TopDistance = topDistance;
             LeftDistance = leftDistance;
         }
+
+        public override string ToTag()
+        {
+            return $"\t\t<{Tag} style= \"position:absolute; top: {TopDistance}px; left: {LeftDistance}px; height: {Height}px; width: {Width}px;\">{Content}</{Tag}>";
+        }
     }
 }

@@ -96,13 +96,19 @@ namespace FactoryWYSIWYG
 
         private void RemoveButton_Click(object sender, RoutedEventArgs e)
         {
-            Elements.Pop();
-            AddedElements.Items.Refresh();
+            try
+            {
+                Elements.Pop();
+                AddedElements.Items.Refresh();
+
+            }
+            catch (Exception) { }
         }
 
         private void CompileButton_Click(object sender, RoutedEventArgs e)
         {
-
+            ElementGenerator.CompileCode(Elements);
+            MessageBox.Show("Done\n found in "+AppDomain.CurrentDomain.BaseDirectory);
         }
 
     }

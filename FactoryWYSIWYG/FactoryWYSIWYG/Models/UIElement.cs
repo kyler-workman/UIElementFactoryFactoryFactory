@@ -21,5 +21,8 @@ namespace FactoryWYSIWYG.Models
         {
             return $"{Tag} {Content} X:{LeftDistance} Y:{TopDistance} L:{Width} W:{Height}";
         }
+
+
+        public abstract string ToTag();
     }
 }
