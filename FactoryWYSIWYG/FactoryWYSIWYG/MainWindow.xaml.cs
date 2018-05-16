@@ -24,7 +24,7 @@ namespace FactoryWYSIWYG
     public partial class MainWindow : Window
     {
         public UIElementFactoryFactory ElementGenerator { get; set; }
-        List<Models.UIElement> Elements = new List<Models.UIElement>();
+        Stack<Models.UIElement> Elements = new Stack<Models.UIElement>();
         public MainWindow()
         {
             InitializeComponent();
@@ -33,6 +33,7 @@ namespace FactoryWYSIWYG
             width.Title.Content = "Width:";
             top.Title.Content = "Top:";
             left.Title.Content = "Left:";
+            AddedElements.ItemsSource = Elements;
         }
         
 
@@ -52,28 +53,27 @@ namespace FactoryWYSIWYG
             vars.Visibility = Visibility.Visible;
             Add.Visibility = Visibility.Visible;
             Comp.Visibility = Visibility.Visible;
-            AddedElements.Children.Add(new Label() { Content="Added Elements"});
         }
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
             bool badinput = false;
-            if(!int.TryParse(left.Input.Text, out int x))
+            if (!int.TryParse(left.Input.Text, out int x))
             {
                 left.Input.Text = "Enter Number";
                 badinput = true;
             }
-            if(!int.TryParse(top.Input.Text,out int y))
+            if (!int.TryParse(top.Input.Text, out int y))
             {
                 top.Input.Text = "Enter Number";
                 badinput = true;
             }
-            if(!int.TryParse(width.Input.Text,out int w))
+            if (!int.TryParse(width.Input.Text, out int w))
             {
                 width.Input.Text = "Enter Number";
                 badinput = true;
             }
-            if(!int.TryParse(height.Input.Text,out int h))
+            if (!int.TryParse(height.Input.Text, out int h))
             {
                 height.Input.Text = "Enter Number";
                 badinput = true;
@@ -89,9 +89,21 @@ namespace FactoryWYSIWYG
 
             if (badinput) return;
 
-            Models.UIElement NewElement = ElementGenerator.GenerateUiElement(((ElementsList)ButtonContainer.Children[0]).ElementSelected.ToString(), content.Input.Text,h,w,y,x);
-            Elements.Add(NewElement);
-            AddedElements.Children.Add(new Label() {Content = NewElement.ToString()});
+            Models.UIElement NewElement = ElementGenerator.GenerateUiElement(((ElementsList)ButtonContainer.Children[0]).ElementSelected.ToString(), content.Input.Text, h, w, y, x);
+            Elements.Push(NewElement);
+            AddedElements.Items.Refresh();
         }
+
+        private void RemoveButton_Click(object sender, RoutedEventArgs e)
+        {
+            Elements.Pop();
+            AddedElements.Items.Refresh();
+        }
+
+        private void CompileButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
     }
 }

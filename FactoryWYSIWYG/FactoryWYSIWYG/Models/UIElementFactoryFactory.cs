@@ -17,5 +17,6 @@ namespace FactoryWYSIWYG.Models
         }
         public UIElement GenerateUiElement(string tag, string content, int height, int width, int topDistance, int leftDistance) => UIElementFactory.CreateUIElement(tag, content, height, width, topDistance, leftDistance);
         }
+            
     
 }

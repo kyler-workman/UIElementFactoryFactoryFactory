@@ -27,13 +27,22 @@
         </StackPanel>
         <StackPanel>
             <ScrollViewer Height="350" >
-                <StackPanel Width="233" x:Name="AddedElements">
-
-                </StackPanel>
+                <ListBox x:Name="AddedElements">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Label Content="{Binding}"></Label>
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
             </ScrollViewer>
             <StackPanel Orientation="Horizontal">
-                <Button Height="30" Width="100" Margin="10 20" Click="AddButton_Click" x:Name="Add" Visibility="Hidden">Add Element</Button>
-                <Button Height="30" Width="100" Margin="10 20" x:Name="Comp" Visibility="Hidden">Compile</Button>
+                <StackPanel>
+                    <Button Height="25" Width="100" Margin="10 7" Click="AddButton_Click" x:Name="Add" Visibility="Visible">Add Element</Button>
+                    <Button Height="25" Width="100" Margin="10 0" Click="RemoveButton_Click" x:Name="Remove" Visibility="Visible">Remove Element</Button>
+                </StackPanel>
+                <Button Height="30" Width="100" Margin="10 20" Click="CompileButton_Click" x:Name="Comp" Visibility="Visible">Compile</Button>
             </StackPanel>
         </StackPanel>
     </StackPanel>
